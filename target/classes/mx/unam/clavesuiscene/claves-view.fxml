@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Group fx:id="rootGroup" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.unam.clavesuiscene.ClavesAppController">
+    <children>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="443.0">
+            <children>
+                <Slider fx:id="slider"
+                        blockIncrement="1.0"
+                        layoutX="13.0"
+                        layoutY="69.0"
+                        majorTickUnit="1"
+                        max="50"
+                        min="1"
+                        value="6"
+                        prefHeight="14.0"
+                        prefWidth="336.0"
+                        showTickLabels="true"
+                        showTickMarks="true"
+                        onMouseDragged="#sliderGetValue"/>
+                <TextField fx:id="claveTextField"
+                           layoutX="20.0"
+                           layoutY="137.0"
+                           prefHeight="25.0"
+                           prefWidth="322.0" />
+                <Button fx:id="cerrarButton"
+                        layoutX="290.0"
+                        layoutY="199.0"
+                        mnemonicParsing="false"
+                        onAction="#closeEventHandler"
+                        text="Cerrar" />
+            </children>
+        </Pane>
+    </children>
+</Group>
