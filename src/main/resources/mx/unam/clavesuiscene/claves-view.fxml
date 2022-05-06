@@ -2,39 +2,64 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Group fx:id="rootGroup" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.unam.clavesuiscene.ClavesAppController">
+<Group fx:id="rootGroup" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.unam.clavesuiscene.ClavesAppController">
     <children>
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="443.0">
+        <Pane layoutX="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="443.0">
             <children>
                 <Slider fx:id="slider"
                         blockIncrement="1.0"
-                        layoutX="13.0"
-                        layoutY="69.0"
+                        layoutX="26.0"
+                        layoutY="92.0"
                         majorTickUnit="1"
                         max="50"
-                        min="1"
-                        value="6"
-                        prefHeight="14.0"
-                        prefWidth="336.0"
+                        min="6"
+                        onMouseDragged="#sliderGetValue"
+                        prefHeight="37.0"
+                        prefWidth="372.0"
                         showTickLabels="true"
                         showTickMarks="true"
-                        onMouseDragged="#sliderGetValue"/>
+                        value="6" />
                 <TextField fx:id="claveTextField"
-                           layoutX="20.0"
-                           layoutY="137.0"
+                           layoutX="26.0"
+                           layoutY="149.0"
                            prefHeight="25.0"
-                           prefWidth="322.0" />
+                           prefWidth="372.0" />
                 <Button fx:id="cerrarButton"
-                        layoutX="290.0"
-                        layoutY="199.0"
+                        layoutX="361.0"
+                        layoutY="207.0"
                         mnemonicParsing="false"
                         onAction="#closeEventHandler"
                         text="Cerrar" />
+                <Label fx:id="caracteres"
+                       layoutX="222.0"
+                       layoutY="186.0"
+                       text="caracteres" />
+                <TextField fx:id="numeroTextField"
+                           layoutX="162.0"
+                           layoutY="182.0"
+                           prefHeight="25.0"
+                           prefWidth="53.0" />
+            <Text layoutX="39.0"
+                  layoutY="57.0"
+                  strokeType="OUTSIDE"
+                  strokeWidth="0.0"
+                  text="Desliza el boton para generar contraseñas aleatorias ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
             </children>
+         <effect>
+            <ColorAdjust hue="0.55" saturation="0.12" />
+         </effect>
         </Pane>
     </children>
 </Group>

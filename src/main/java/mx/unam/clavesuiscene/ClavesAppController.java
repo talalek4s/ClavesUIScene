@@ -1,9 +1,6 @@
 package mx.unam.clavesuiscene;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,14 +19,25 @@ public class ClavesAppController {
     private TextField claveTextField;
 
     @FXML
+    private TextField numeroTextField;
+
+    @FXML
+    private Label caracteres;
+
+    @FXML
     private Button cerrarButton;
 
     private DoubleProperty sliderValue = new SimpleDoubleProperty(0.0);
-    private StringProperty sliderValueToString = new SimpleStringProperty();
+    private IntegerProperty sliderInt = new SimpleIntegerProperty(0);
+
+
     @FXML
     public void sliderGetValue(MouseEvent me){
         sliderValue.bind(slider.valueProperty());
-        claveTextField.setText( sliderValue.getValue().toString());
+        sliderInt.bind(sliderValue);
+        numeroTextField.setText(sliderInt.getValue().toString());
+        FuncionGeneradora.KeyGenerator(sliderInt.getValue());
+        claveTextField.setText( FuncionGeneradora.KeyGenerator(sliderInt.getValue()));
     }
 
     private Stage stage;
